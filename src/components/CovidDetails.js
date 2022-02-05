@@ -1,6 +1,8 @@
 import React from 'react';
-import { Grid, Box, Button, Image, Heading, Link, Text } from "@codeday/topo/Atom"
-import { useColorMode } from "@codeday/topo/Theme"
+import {
+  Grid, Box, Button, Image, Heading, Link, Text,
+} from '@codeday/topo/Atom';
+import { useColorMode } from '@codeday/topo/Theme';
 
 function Highlight({ children }) {
   return <Text as="span" bold color="brand.700">{children}</Text>;

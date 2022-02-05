@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { Box, Button } from '@codeday/topo/Atom'
-import { apiFetch } from '@codeday/topo/utils'
+import { Box, Button } from '@codeday/topo/Atom';
+import { apiFetch } from '@codeday/topo/utils';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { print } from 'graphql';
 import { useToast } from '@chakra-ui/react';
@@ -72,7 +72,7 @@ export default function PaymentBox({
               status: 'error',
               title: 'Error',
               description: ex.response?.errors
-                ? ex.response.errors.map(error => error.message).join(' ')
+                ? ex.response.errors.map((error) => error.message).join(' ')
                 : ex.toString(),
             });
           }

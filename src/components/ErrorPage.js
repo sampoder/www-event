@@ -1,5 +1,5 @@
-import { Heading, Link, Text } from "@codeday/topo/Atom"
-import { Content } from "@codeday/topo/Molecule"
+import { Heading, Link, Text } from '@codeday/topo/Atom';
+import { Content } from '@codeday/topo/Molecule';
 import { DisappointedFace } from '@codeday/topocons/Emoji/People';
 import React from 'react';
 import Page from './Page';
@@ -17,5 +17,5 @@ export default function ErrorPage({ details }) {
         <Text textAlign="center" color="gray.500"> { details }</Text>
       </Content>
     </Page>
-  )
+  );
 }

@@ -1,15 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useReducer, useEffect } from 'react';
-import { Grid, Box, Button, List, ListItem, Heading, Link, Text } from '@codeday/topo/Atom'
-import { CognitoForm, DataCollection } from '@codeday/topo/Molecule'
-import { useColorMode } from '@codeday/topo/Theme'
-import { useTheme, apiFetch } from '@codeday/topo/utils'
+import {
+  Grid, Box, Button, List, ListItem, Heading, Link, Text,
+} from '@codeday/topo/Atom';
+import { CognitoForm, DataCollection } from '@codeday/topo/Molecule';
+import { useColorMode } from '@codeday/topo/Theme';
+import { useTheme, apiFetch } from '@codeday/topo/utils';
+import { Ticket } from '@codeday/topocons/Icon';
+import { print } from 'graphql';
 import PaymentBox from './PaymentBox';
 import PromoBox from './PromoBox';
 import RegistrantBox from './RegistrantBox';
 import GuardianBox from './GuardianBox';
-import { print } from 'graphql';
-import { RefreshRemainingQuery } from './RegisterForm.gql'
+import { RefreshRemainingQuery } from './RegisterForm.gql';
 
 export default function RegisterForm({ event, ...props }) {
   const [tickets, updateTickets] = useReducer((prev, {
@@ -27,7 +30,7 @@ export default function RegisterForm({ event, ...props }) {
 
   const { colorMode } = useColorMode();
   const gray = useTheme().colors.gray[300];
-  const black = useTheme().colors.black;
+  const { black } = useTheme().colors;
   const [guardianData, setGuardianData] = useState();
   const [guardianValid, setGuardianValid] = useState(false);
   const [promoCode, setPromoCode] = useState();
@@ -43,7 +46,7 @@ export default function RegisterForm({ event, ...props }) {
       if (typeof remainingRes?.clear?.event?.remainingTickets !== 'undefined') {
         setRemainingTickets(remainingRes.clear.event.remainingTickets);
       }
-    }
+    };
     const interval = setInterval(refreshRemaining, 30000);
     refreshRemaining();
     return () => clearInterval(interval);
@@ -64,7 +67,7 @@ export default function RegisterForm({ event, ...props }) {
         <Box p={8} textAlign="center">
           <Text fontSize="3xl" bold>You&apos;re going to CodeDay! Now customize your experience.</Text>
           <Text>
-            No need to print a ticket, we'll check you in by name. Please complete the following information:
+            No need to print a ticket, we&apos;ll check you in by name. Please complete the following information:
           </Text>
           <CognitoForm
             formId="104"

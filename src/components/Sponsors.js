@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Box, Image, Heading, Link } from '@codeday/topo/Atom'
-import { Content } from '@codeday/topo/Molecule'
+import {
+  Box, Image, Heading, Link,
+} from '@codeday/topo/Atom';
+import { Content } from '@codeday/topo/Molecule';
 
 export default function Sponsors({ globalSponsors, localSponsors }) {
   if (!globalSponsors) return <></>;
@@ -29,7 +31,7 @@ export default function Sponsors({ globalSponsors, localSponsors }) {
             </Link>
           ))}
         {globalSponsors
-          .filter((sponsor) => sponsor.type === "major" && sponsor.logo?.url)
+          .filter((sponsor) => sponsor.type === 'major' && sponsor.logo?.url)
           .map((sponsor, i) => (
             <Link key={sponsor.name} href={sponsor.link}>
               <Image
@@ -47,7 +49,7 @@ export default function Sponsors({ globalSponsors, localSponsors }) {
       </Box>
       <Box>
         {globalSponsors
-          .filter((sponsor) => sponsor.type === "minor" && sponsor.logo?.url)
+          .filter((sponsor) => sponsor.type === 'minor' && sponsor.logo?.url)
           .map((sponsor, i) => (
             <Link key={sponsor.name} to={sponsor.link}>
               <Image

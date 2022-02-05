@@ -2,7 +2,9 @@
 import React, {
   useEffect, useReducer, useRef,
 } from 'react';
-import { Grid, Box, NumberInput, TextInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, Text } from '@codeday/topo/Atom'
+import {
+  Grid, Box, NumberInput, TextInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, Text,
+} from '@codeday/topo/Atom';
 import { UiError } from '@codeday/topocons/Icon';
 
 export default function RegistrantBox({ event, onChange, ...rest }) {

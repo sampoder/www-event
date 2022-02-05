@@ -1,5 +1,7 @@
 import React from 'react';
-import { Grid, Box, Image, Text } from '@codeday/topo/Atom'
+import {
+  Grid, Box, Image, Text,
+} from '@codeday/topo/Atom';
 
 const steps = [
   'Come up with ideas.',

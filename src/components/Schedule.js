@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Grid, Box, Heading, Link, Text } from '@codeday/topo/Atom'
-import { useColorModeValue } from '@codeday/topo/Theme'
+import {
+  Grid, Box, Heading, Link, Text,
+} from '@codeday/topo/Atom';
+import { useColorModeValue } from '@codeday/topo/Theme';
 import { DateTime } from 'luxon';
 
 export default function Schedule({ event, timezone, ...props }) {
+  const bg = useColorModeValue('gray.200', 'gray.850');
   if (!event.schedule || event.schedule.length === 0) return <></>;
   const days = event.schedule
     .map((e) => ({
@@ -27,7 +30,7 @@ export default function Schedule({ event, timezone, ...props }) {
             <Heading as="h4" fontSize="xl" mb={4}>{dayName}</Heading>
             {days[dayName].map((e) => (
               <Box key={e.id} mb={4} borderWidth={2}>
-                <Box bg={useColorModeValue("gray.200", "gray.850")} p={1} mb={0} fontSize="sm">
+                <Box bg={bg} p={1} mb={0} fontSize="sm">
                   {e.link ? (
                     <Link d="inline-block" fontWeight="bold" fontSize="lg" href={e.link} target="_blank">
                       {e.name}

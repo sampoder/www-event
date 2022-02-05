@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Text } from '@codeday/topo/Atom'
-import { Slides } from '@codeday/topo/Molecule'
+import { Box, Text } from '@codeday/topo/Atom';
+import { Slides } from '@codeday/topo/Molecule';
 
 export default function ThemeNotifier({ event, ...props }) {
   const { theme, themeBackgrounds } = event || {};
@@ -49,7 +49,7 @@ export default function ThemeNotifier({ event, ...props }) {
               &ldquo;{theme}&rdquo;
             </Text>
             <Text textAlign="center" fontSize="lg" mt={8} bold>
-              (But it's optional!)
+              (But it&apos;s optional!)
             </Text>
           </>
         ) : (

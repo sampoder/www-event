@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Flex, Box, Button, TextInput } from '@codeday/topo/Atom'
-import { apiFetch } from '@codeday/topo/utils'
+import {
+  Flex, Box, Button, TextInput,
+} from '@codeday/topo/Atom';
+import { apiFetch } from '@codeday/topo/utils';
 import { UiCheck } from '@codeday/topocons/Icon';
 import { print } from 'graphql';
 import { useToast } from '@chakra-ui/react';

@@ -7,7 +7,7 @@ export function useSlideshow(length, duration) {
     if (typeof window === 'undefined' || length === 0 || duration === 0) return;
     const interval = setInterval(next, duration);
     return () => clearInterval(interval);
-  }, [typeof window, i, length, duration])
+  }, [typeof window, i, length, duration]);
 
   return i;
 }

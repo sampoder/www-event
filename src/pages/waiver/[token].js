@@ -1,16 +1,17 @@
 import React from 'react';
 import { sign, verify } from 'jsonwebtoken';
-import { Box } from '@codeday/topo/Atom'
-import { CognitoForm, Content } from '@codeday/topo/Molecule'
-import { apiFetch } from '@codeday/topo/utils'
+import { Box } from '@codeday/topo/Atom';
+import { CognitoForm, Content } from '@codeday/topo/Molecule';
+import { apiFetch } from '@codeday/topo/utils';
 import getConfig from 'next/config';
+import { print } from 'graphql';
 import Page from '../../components/Page';
 import { GetTicketDetailsQuery } from './token.gql';
-import { print } from 'graphql';
 import ErrorPage from '../../components/ErrorPage';
+
 const { serverRuntimeConfig } = getConfig();
 export default function WaiverPage({ token, ticket, error }) {
-  if (error) return <ErrorPage details={error} />
+  if (error) return <ErrorPage details={error} />;
   return (
     <Page>
       <Content>
@@ -36,8 +37,9 @@ export default function WaiverPage({ token, ticket, error }) {
                 Ticket: ticket.id,
                 ParticipantName: `${ticket.firstName} ${ticket.lastName}`,
                 EventName: ticket.event.name,
-                SignerEmail: ticket.guardian?.email
-              }} />
+                SignerEmail: ticket.guardian?.email,
+              }}
+            />
           </Box>
         </Box>
 
@@ -49,7 +51,7 @@ export default function WaiverPage({ token, ticket, error }) {
 export async function getServerSideProps({ params: { token } }) {
   let jwt;
   try {
-    jwt = verify(token, serverRuntimeConfig.clear_gql.secret, { audience: serverRuntimeConfig.audience });
+    jwt = verify(token, 'serverRuntimeConfig.clear_gql.secret', { audience: serverRuntimeConfig.audience });
     if (!jwt) {
       return {
         props: {

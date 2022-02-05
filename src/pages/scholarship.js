@@ -1,6 +1,6 @@
 import React from 'react';
+import { CognitoForm, Content } from '@codeday/topo/Molecule';
 import Page from '../components/Page';
-import { CognitoForm, Content } from '@codeday/topo/Molecule'
 
 export default function Scholarship() {
   return (

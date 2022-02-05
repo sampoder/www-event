@@ -2,9 +2,11 @@
 import React, {
   useEffect, useReducer, useRef,
 } from 'react';
-import { Grid, Box, TextInput, Text } from '@codeday/topo/Atom'
+import {
+  Grid, Box, TextInput, Text,
+} from '@codeday/topo/Atom';
 
-export default function GuardianBox({ event, onChange, ...rest }) {
+export default function GuardianBox({ /* event, */ onChange, ...rest }) {
   const [guardianData, setGuardianData] = useReducer(
     (prev, next) => (Array.isArray(next) ? { ...prev, [next[0]]: next[1] } : next), {},
   );
@@ -14,7 +16,7 @@ export default function GuardianBox({ event, onChange, ...rest }) {
     const isValid = Boolean(
       guardianData?.firstName
       && guardianData?.lastName
-      && (guardianData?.email || guardianData?.phone)
+      && (guardianData?.email || guardianData?.phone),
     );
 
     if (initialRender.current) initialRender.current = false;

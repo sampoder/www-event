@@ -1,4 +1,6 @@
-import { Grid, Box, Image, Heading, Text } from '@codeday/topo/Atom'
+import {
+  Grid, Box, Image, Heading, Text,
+} from '@codeday/topo/Atom';
 import { useSlideshow } from '../providers/slideshow';
 
 const SIZE = 40;
@@ -14,7 +16,7 @@ export default function StudentQuotes({ quotes, ...props }) {
 
   return (
     <Box {...props}>
-      <Grid templateColumns={{ base: '1fr', md: '1fr 1fr'}} alignItems="center" gap={16}>
+      <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} alignItems="center" gap={16}>
         <Box textAlign="center">
           <Heading as="h3" fontSize="2xl" pb={4}>
             Welcome to our friendly &amp; creative community of <Highlight>50,000+ students</Highlight> who have made{' '}
@@ -48,5 +50,5 @@ export default function StudentQuotes({ quotes, ...props }) {
         </Box>
       </Grid>
     </Box>
-  )
+  );
 }
