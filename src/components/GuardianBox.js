@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, {
-  useEffect, useReducer, useRef, useState,
+  useEffect, useReducer, useRef,
 } from 'react';
-import { DateTime } from 'luxon';
-import Box, { Grid } from '@codeday/topo/Atom/Box';
-import Text from '@codeday/topo/Atom/Text';
-import TextInput from '@codeday/topo/Atom/Input/Text';
+import { Grid, Box, TextInput, Text } from '@codeday/topo/Atom'
 
 export default function GuardianBox({ event, onChange, ...rest }) {
   const [guardianData, setGuardianData] = useReducer(

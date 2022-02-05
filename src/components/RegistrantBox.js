@@ -1,18 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, {
-  useEffect, useReducer, useRef, useState,
+  useEffect, useReducer, useRef,
 } from 'react';
-import { DateTime } from 'luxon';
-import Box, { Flex, Grid } from '@codeday/topo/Atom/Box';
-import Text, { Heading, Link } from '@codeday/topo/Atom/Text';
-import TextInput from '@codeday/topo/Atom/Input/Text';
-import Divider from '@codeday/topo/Atom/Divider';
+import { Grid, Box, NumberInput, TextInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, Text } from '@codeday/topo/Atom'
 import { UiError } from '@codeday/topocons/Icon';
-import {   NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper } from '@chakra-ui/react';
 
 export default function RegistrantBox({ event, onChange, ...rest }) {
   const [ticketData, setTicketData] = useReducer(
@@ -22,8 +13,8 @@ export default function RegistrantBox({ event, onChange, ...rest }) {
   const initialRender = useRef(true);
   useEffect(() => {
     const isValid = Boolean(ticketData?.firstName && ticketData?.lastName
-    && (ticketData?.email || ticketData?.phone)
-    && ticketData?.age && ticketData.age > event.minAge && ticketData.age < event.maxAge);
+      && (ticketData?.email || ticketData?.phone)
+      && ticketData?.age && ticketData.age > event.minAge && ticketData.age < event.maxAge);
 
     if (initialRender.current) initialRender.current = false;
     else onChange(ticketData, isValid);

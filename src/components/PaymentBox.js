@@ -1,12 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import Box from '@codeday/topo/Atom/Box';
-import Text, { Heading } from '@codeday/topo/Atom/Text';
-import { Ticket } from '@codeday/topocons/Icon';
-import Button from '@codeday/topo/Atom/Button';
+import { Box, Button } from '@codeday/topo/Atom'
+import { apiFetch } from '@codeday/topo/utils'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { print } from 'graphql';
-import { apiFetch } from '@codeday/topo/utils';
 import { useToast } from '@chakra-ui/react';
 import { RegisterMutation, FinalizePaymentMutation, WithdrawFailedPaymentMutation } from './RegisterForm.gql';
 

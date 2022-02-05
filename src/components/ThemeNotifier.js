@@ -1,7 +1,6 @@
 import React from 'react';
-import Box from '@codeday/topo/Atom/Box';
-import Text from '@codeday/topo/Atom/Text';
-import Slides from '@codeday/topo/Molecule/Slides';
+import { Box, Text } from '@codeday/topo/Atom'
+import { Slides } from '@codeday/topo/Molecule'
 
 export default function ThemeNotifier({ event, ...props }) {
   const { theme, themeBackgrounds } = event || {};

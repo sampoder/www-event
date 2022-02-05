@@ -1,18 +1,13 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useReducer, useEffect } from 'react';
-import CognitoForm from '@codeday/topo/Molecule/CognitoForm';
-import Box, { Grid } from '@codeday/topo/Atom/Box';
-import Text, { Heading, Link } from '@codeday/topo/Atom/Text';
-import List, { Item as ListItem } from '@codeday/topo/Atom/List';
-import Button from '@codeday/topo/Atom/Button';
-import { Ticket } from '@codeday/topocons/Icon';
-import DataCollection from '@codeday/topo/Molecule/DataCollection';
-import { useColorMode, useCurrentColor } from '@codeday/topo/Theme';
+import { Grid, Box, Button, List, ListItem, Heading, Link, Text } from '@codeday/topo/Atom'
+import { CognitoForm, DataCollection } from '@codeday/topo/Molecule'
+import { useColorMode } from '@codeday/topo/Theme'
+import { useTheme, apiFetch } from '@codeday/topo/utils'
 import PaymentBox from './PaymentBox';
 import PromoBox from './PromoBox';
 import RegistrantBox from './RegistrantBox';
 import GuardianBox from './GuardianBox';
-import { apiFetch, useTheme } from '@codeday/topo/utils';
 import { print } from 'graphql';
 import { RefreshRemainingQuery } from './RegisterForm.gql'
 

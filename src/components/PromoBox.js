@@ -1,11 +1,8 @@
-import React, { useReducer, useState } from 'react';
-import Box, { Flex, Grid } from '@codeday/topo/Atom/Box';
-import Text, { Heading, Link } from '@codeday/topo/Atom/Text';
-import TextInput from '@codeday/topo/Atom/Input/Text';
+import React, { useState } from 'react';
+import { Flex, Box, Button, TextInput } from '@codeday/topo/Atom'
+import { apiFetch } from '@codeday/topo/utils'
 import { UiCheck } from '@codeday/topocons/Icon';
-import Button from '@codeday/topo/Atom/Button';
 import { print } from 'graphql';
-import { apiFetch } from '@codeday/topo/utils';
 import { useToast } from '@chakra-ui/react';
 import { CheckPromoCode } from './PromoBox.gql';
 

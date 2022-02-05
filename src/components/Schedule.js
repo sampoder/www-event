@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Box, { Grid } from '@codeday/topo/Atom/Box';
-import Text, { Heading, Link } from '@codeday/topo/Atom/Text';
+import { Grid, Box, Heading, Link, Text } from '@codeday/topo/Atom'
+import { useColorModeValue } from '@codeday/topo/Theme'
 import { DateTime } from 'luxon';
-import { useColorModeValue } from '@codeday/topo/Theme';
 
 export default function Schedule({ event, timezone, ...props }) {
   if (!event.schedule || event.schedule.length === 0) return <></>;

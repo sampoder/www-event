@@ -1,7 +1,4 @@
-import Box, { Grid } from '@codeday/topo/Atom/Box';
-import Content from '@codeday/topo/Molecule/Content';
-import Text, { Heading } from '@codeday/topo/Atom/Text';
-import Image from '@codeday/topo/Atom/Image';
+import { Grid, Box, Image, Heading, Text } from '@codeday/topo/Atom'
 import { useSlideshow } from '../providers/slideshow';
 
 const SIZE = 40;

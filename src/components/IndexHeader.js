@@ -1,8 +1,6 @@
 import React from 'react';
-import Box, { Grid } from '@codeday/topo/Atom/Box';
-import Content from '@codeday/topo/Molecule/Content';
-import Text, { Heading } from '@codeday/topo/Atom/Text';
-import Divider from '@codeday/topo/Atom/Divider';
+import { Grid, Box, Heading, Text } from '@codeday/topo/Atom'
+import { Content } from '@codeday/topo/Molecule'
 import { useSlideshow } from '../providers/slideshow';
 
 export default function IndexHeader({

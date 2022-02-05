@@ -1,5 +1,5 @@
-import Content from '@codeday/topo/Molecule/Content';
-import Text, { Heading, Link } from '@codeday/topo/Atom/Text';
+import { Heading, Link, Text } from "@codeday/topo/Atom"
+import { Content } from "@codeday/topo/Molecule"
 import { DisappointedFace } from '@codeday/topocons/Emoji/People';
 import React from 'react';
 import Page from './Page';

@@ -1,11 +1,10 @@
 import React from 'react';
 import Page from '../components/Page';
-import CognitoForm from '@codeday/topo/Molecule/CognitoForm';
-import Content from '@codeday/topo/Molecule/Content';
+import { CognitoForm, Content } from '@codeday/topo/Molecule'
 
 export default function Scholarship() {
   return (
-    <Page>
+    <Page darkHeader={false}>
       <Content>
         <CognitoForm formId={101} />
       </Content>

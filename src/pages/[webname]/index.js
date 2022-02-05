@@ -2,17 +2,13 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { print } from 'graphql';
 import { DateTime } from 'luxon';
-import Text, { Link, Heading } from '@codeday/topo/Atom/Text';
-import Button from "@codeday/topo/Atom/Button"
-import MailingListSubscribe from '@codeday/topo/Organism/MailingListSubscribe';
-import Content from '@codeday/topo/Molecule/Content';
+import { Box, Button, Heading, Link, Text } from '@codeday/topo/Atom'
+import { Content, DataCollection, CognitoForm } from '@codeday/topo/Molecule'
+import { MailingListSubscribe } from '@codeday/topo/Organism'
+import { useColorMode } from '@codeday/topo/Theme'
 import { apiFetch } from '@codeday/topo/utils'
-import Box from "@codeday/topo/Atom/Box"
-import { useColorMode } from '@codeday/topo/Theme';
 import Page from '../../components/Page';
 import { IndexStaticPathsQuery, IndexStaticPropsQuery } from './index.gql';
-import DataCollection from "@codeday/topo/Molecule/DataCollection"
-import CognitoForm from '@codeday/topo/Molecule/CognitoForm';
 import IndexHeader from '../../components/IndexHeader';
 import Explainer from '../../components/Explainer';
 import StudentQuotes from '../../components/StudentQuotes';

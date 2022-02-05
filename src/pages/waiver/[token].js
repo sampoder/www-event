@@ -1,17 +1,15 @@
 import React from 'react';
-import Text, { Heading, Link } from '@codeday/topo/Atom/Text';
-import Box from '@codeday/topo/Atom/Box'
-import Content from '@codeday/topo/Molecule/Content';
 import { sign, verify } from 'jsonwebtoken';
+import { Box } from '@codeday/topo/Atom'
+import { CognitoForm, Content } from '@codeday/topo/Molecule'
+import { apiFetch } from '@codeday/topo/utils'
 import getConfig from 'next/config';
 import Page from '../../components/Page';
 import { GetTicketDetailsQuery } from './token.gql';
-import { apiFetch } from '@codeday/topo/utils';
 import { print } from 'graphql';
 import ErrorPage from '../../components/ErrorPage';
-import CognitoForm from '@codeday/topo/Molecule/CognitoForm'
 const { serverRuntimeConfig } = getConfig();
-export default function WaiverPage({token, ticket, error}) {
+export default function WaiverPage({ token, ticket, error }) {
   if (error) return <ErrorPage details={error} />
   return (
     <Page>
@@ -34,12 +32,12 @@ export default function WaiverPage({token, ticket, error}) {
               formId={5}
               prefill={{
                 JWT: token,
-                Minor: (ticket.age >= ticket.event.majorityAge? 'no': 'yes'),
+                Minor: (ticket.age >= ticket.event.majorityAge ? 'no' : 'yes'),
                 Ticket: ticket.id,
                 ParticipantName: `${ticket.firstName} ${ticket.lastName}`,
                 EventName: ticket.event.name,
                 SignerEmail: ticket.guardian?.email
-              }}/>
+              }} />
           </Box>
         </Box>
 

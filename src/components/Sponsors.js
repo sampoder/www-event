@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Box, { Grid } from '@codeday/topo/Atom/Box';
-import Content from '@codeday/topo/Molecule/Content';
-import Image from '@codeday/topo/Atom/Image';
-import { Link, Heading } from '@codeday/topo/Atom/Text';
+import { Box, Image, Heading, Link } from '@codeday/topo/Atom'
+import { Content } from '@codeday/topo/Molecule'
 
 export default function Sponsors({ globalSponsors, localSponsors }) {
   if (!globalSponsors) return <></>;
