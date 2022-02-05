@@ -51,7 +51,7 @@ export default function WaiverPage({ token, ticket, error }) {
 export async function getServerSideProps({ params: { token } }) {
   let jwt;
   try {
-    jwt = verify(token, 'serverRuntimeConfig.clear_gql.secret', { audience: serverRuntimeConfig.audience });
+    jwt = verify(token, serverRuntimeConfig.clear_gql.secret, { audience: serverRuntimeConfig.audience });
     if (!jwt) {
       return {
         props: {
